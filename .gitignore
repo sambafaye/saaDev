@@ -17,3 +17,4 @@ modules/sopeduc-wsserveur/*.settings
 modules/sopeduc-services/*.settings
 modules/sopeduc-services/target
 modules/sopeduc-resources/target
+modules/sopeduc-ear/.settings/org.eclipse.wst.common.component
