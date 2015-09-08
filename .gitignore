@@ -9,8 +9,11 @@ modules/sopeduc-core/*.project
 modules/sopeduc-wsclient/*.project
 modules/sopeduc-web/*.project
 modules/sopeduc-wsserveur/*.project
-modules/sopeduc-ear/*.settings
+modules/sopeduc-ear/.settings/*
 modules/sopeduc-core/*.settings
 modules/sopeduc-wsclient/*.settings
 modules/sopeduc-web/*.settings
 modules/sopeduc-wsserveur/*.settings
+modules/sopeduc-services/*.settings
+modules/sopeduc-services/target
+modules/sopeduc-resources/target
