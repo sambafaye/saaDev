@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.yonima.sopeduc.serveur</groupId>
+	<artifactId>sopeduc-serveur</artifactId>
+	<packaging>pom</packaging>
+	<version>SNAPSHOT</version>
+	<name>${artifactId}</name>
+
+	<modules>
+		<module>sopeduc-wsclient</module>
+		<module>sopeduc-resources</module>
+		<module>sopeduc-services</module>
+		<module>sopeduc-wsserveur</module>
+		<module>sopeduc-web</module>
+		<module>sopeduc-ear</module>
+		<module>sopeduc-core</module>
+	</modules>
+
+	<properties>
+	
+		<java.version>1.7</java.version>
+		
+		<spring.version>3.0.5.RELEASE</spring.version>
+		<mcp.version>2.1.58</mcp.version>
+		
+		<encoding>UTF-8</encoding>
+		<version.org.jboss.spec.jboss.javaee.6.0>3.0.0.Final</version.org.jboss.spec.jboss.javaee.6.0>
+		<version.jboss-annotations-api_1.1_spec>1.0.1.Final</version.jboss-annotations-api_1.1_spec>
+		<version.jboss-ejb-api_3.1_spec>1.0.2.Final</version.jboss-ejb-api_3.1_spec>
+		<version.commons-lang3>3.4</version.commons-lang3>
+	</properties>
+
+	<distributionManagement></distributionManagement>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>sopeduc-resources</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>sopeduc-wsclient</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>sopeduc-services</artifactId>
+				<version>${project.version}</version>
+				<type>ejb</type>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>sopeduc-wsserveur</artifactId>
+				<version>${project.version}</version>
+				<type>ejb</type>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>sopeduc-web</artifactId>
+				<version>${project.version}</version>
+				<type>war</type>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>sopeduc-ear</artifactId>
+				<version>${project.version}</version>
+				<type>ear</type>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>sopeduc-core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+
+			<!-- Framework SPRING -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<!-- beanutils -->
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>1.8.3</version>
+			</dependency>
+
+			<!-- API J2EE -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>2.5</version>
+			</dependency>
+			<!-- 
+			<dependency>
+				<groupId>javax.ejb</groupId>
+				<artifactId>ejb</artifactId>
+				<version>3.0</version>
+			</dependency>-->
+
+			<!-- open jpa 
+			<dependency>
+				<groupId>org.apache.openjpa</groupId>
+				<artifactId>openjpa</artifactId>
+				<version>1.2.2</version>
+			</dependency>-->
+
+			<!-- cglib -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${version.commons-lang3}</version>
+			</dependency>
+			<dependency>
+				<groupId>cglib</groupId>
+				<artifactId>cglib</artifactId>
+				<version>2.2.2</version>
+			</dependency>
+
+			<!-- Tests -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.8.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.spec</groupId>
+				<artifactId>jboss-javaee-6.0</artifactId>
+				<version>${version.org.jboss.spec.jboss.javaee.6.0}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.spec.javax.annotation</groupId>
+				<artifactId>jboss-annotations-api_1.1_spec</artifactId>
+				<scope>provided</scope>
+				<version>${version.jboss-annotations-api_1.1_spec}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.spec.javax.ejb</groupId>
+				<artifactId>jboss-ejb-api_3.1_spec</artifactId>
+				<scope>provided</scope>
+				<version>${version.jboss-ejb-api_3.1_spec}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			    <plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>versions-maven-plugin</artifactId>
+					<version>2.1</version>
+				</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.4</version>
+				</plugin>
+			
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>2.1</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<encoding>${encoding}</encoding>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<configuration>
+						<encoding>${encoding}</encoding>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ejb-plugin</artifactId>
+					<version>2.3</version>
+					<configuration>
+						<ejbVersion>${ejbVersion}</ejbVersion>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<version>2.9</version>
+					<configuration>
+						<projectNameTemplate>[artifactId]</projectNameTemplate>
+						<wtpmanifest>true</wtpmanifest>
+						<wtpapplicationxml>true</wtpapplicationxml>
+						<wtpversion>2.0</wtpversion>
+
+						<downloadSources>true</downloadSources>
+						<downloadJavadocs>true</downloadJavadocs>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<repositories>
+      <repository>
+		<id>JBoss repository</id>
+		<url>http://repository.jboss.org/nexus/content/groups/public/</url>
+      </repository>
+    </repositories>
+</project>

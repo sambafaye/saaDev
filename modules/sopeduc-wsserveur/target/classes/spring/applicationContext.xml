@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+	<!-- Schemas XML utilisés ci-dessus : - beans : Définition des Beans et 
+		de leurs dependances - context : Activation des annotations et positionnement 
+		de post-processeurs -->
+
+	<!-- Activation de l'interprétation des SpEL ${...} -->
+	<context:property-placeholder />
+
+	<!-- Activation de la détection automatiques des composants. Un composant 
+		est une classe sur laquelle est positionnée l'une des annotations suivantes 
+		: - @Component Annotation générique des composants - @Repository Annotation 
+		dénotant un Bean effectuant des accès de données (par exemple DAO) - @Service 
+		Annotation dénotant un Bean effectuant des traitements métier - @Controller 
+		Annotation dénotant un contrôleur de l’interface graphique (généralement 
+		un contrôleur Web) -->
+	<context:component-scan base-package="com.yonima.sopeduc" />
+
+	<!-- Activation de la détection des annotations @Autowired et @Resource -->
+	<context:annotation-config />
+
+	<!-- import du contexte du module services -->
+	<import resource="classpath:spring/DAOContext.xml" />
+	
+	<!-- import du contexte commun à la signature et aux services -->
+    <import resource="classpath:spring/sopeduc-core-context.xml" />
+	
+	<!-- Fichier de configuration des WS de type JAX-WS -->
+	<import resource="classpath:${sopeduc.resources.prefix:}WSRemoteServiceInvoker.xml" />
+
+</beans>

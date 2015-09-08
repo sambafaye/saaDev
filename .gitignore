@@ -1,0 +1,6 @@
+modules/sopeduc-web/target
+modules/sopeduc-wsclient/target
+modules/sopeduc-wsserveur/target
+modules/sopeduc-wsclient/target
+modules/sopeduc-core/target
+modules/sopeduc-ear/target

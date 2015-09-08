@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modulemap:EARProjectMap xmlns:modulemap="modulemap.xmi" xmlns:application="application.xmi" xmi:id="EARProjectMap_855133758" xmlns:xmi="http://www.omg.org/XMI" xmi:version="2.0">
+  <utilityJARMappings xmi:id="UtilityJARMapping_1272504982" uri="sopeduc-wsclient.jar" projectName="sopeduc-wsclient"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_201592001" uri="spring-core.jar" projectName="spring-core"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1575049488" uri="spring-asm.jar" projectName="spring-asm"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1973311894" uri="commons-logging.jar" projectName="commons-logging"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1863041837" uri="spring-web.jar" projectName="spring-web"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1832581199" uri="aopalliance.jar" projectName="aopalliance"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_981746319" uri="spring-beans.jar" projectName="spring-beans"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1093523532" uri="spring-context.jar" projectName="spring-context"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_684951298" uri="spring-aop.jar" projectName="spring-aop"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1464117566" uri="spring-expression.jar" projectName="spring-expression"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1556304436" uri="javaee-api.jar" projectName="javaee-api"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_457835392" uri="sopeduc-resources.jar" projectName="sopeduc-resources"/>
+  <mappings xmi:id="ModuleMapping_650197096" projectName="sopeduc-services">
+    <module xmi:type="application:EjbModule" href="META-INF/application.xml#EjbModule_650197096"/>
+  </mappings>
+  <utilityJARMappings xmi:id="UtilityJARMapping_405526143" uri="sopeduc-core.jar" projectName="sopeduc-core"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1712273470" uri="spring-jdbc.jar" projectName="spring-jdbc"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1899340490" uri="spring-tx.jar" projectName="spring-tx"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_2018686422" uri="spring-test.jar" projectName="spring-test"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_2116039248" uri="spring-orm.jar" projectName="spring-orm"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1942446816" uri="tomcat-jdbc.jar" projectName="tomcat-jdbc"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_657234818" uri="tomcat-juli.jar" projectName="tomcat-juli"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1637189605" uri="commons-lang3.jar" projectName="commons-lang3"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_537722224" uri="jboss-javaee-6.0.jar" projectName="jboss-javaee-6.0"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_886232192" uri="activation.jar" projectName="activation"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_2105358999" uri="cdi-api.jar" projectName="cdi-api"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_680644574" uri="jboss-interceptors-api_1.1_spec.jar" projectName="jboss-interceptors-api_1.1_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_2095451296" uri="javax.inject.jar" projectName="javax.inject"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1665604719" uri="jsr181-api.jar" projectName="jsr181-api"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1369173588" uri="mail.jar" projectName="mail"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1413215911" uri="validation-api.jar" projectName="validation-api"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_750680357" uri="hibernate-jpa-2.0-api.jar" projectName="hibernate-jpa-2.0-api"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_218333974" uri="jboss-el-api_2.2_spec.jar" projectName="jboss-el-api_2.2_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1637031942" uri="jboss-jad-api_1.2_spec.jar" projectName="jboss-jad-api_1.2_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_35363830" uri="jboss-jsf-api_2.1_spec.jar" projectName="jboss-jsf-api_2.1_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1654404238" uri="jboss-j2eemgmt-api_1.1_spec.jar" projectName="jboss-j2eemgmt-api_1.1_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_2101250357" uri="jboss-connector-api_1.6_spec.jar" projectName="jboss-connector-api_1.6_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_346175184" uri="jboss-jacc-api_1.4_spec.jar" projectName="jboss-jacc-api_1.4_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_633117765" uri="jboss-servlet-api_3.0_spec.jar" projectName="jboss-servlet-api_3.0_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_28805470" uri="jboss-jaspi-api_1.0_spec.jar" projectName="jboss-jaspi-api_1.0_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_949713715" uri="jboss-jaxr-api_1.0_spec.jar" projectName="jboss-jaxr-api_1.0_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1739943501" uri="jboss-jms-api_1.1_spec.jar" projectName="jboss-jms-api_1.1_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_945600108" uri="jboss-jsp-api_2.2_spec.jar" projectName="jboss-jsp-api_2.2_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1322027356" uri="jboss-jstl-api_1.2_spec.jar" projectName="jboss-jstl-api_1.2_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1447960430" uri="xalan.jar" projectName="xalan"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_586259206" uri="serializer.jar" projectName="serializer"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_603502806" uri="jboss-transaction-api_1.1_spec.jar" projectName="jboss-transaction-api_1.1_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_506395661" uri="jboss-jaxrs-api_1.1_spec.jar" projectName="jboss-jaxrs-api_1.1_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_514181366" uri="jboss-jaxb-api_2.2_spec.jar" projectName="jboss-jaxb-api_2.2_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_372022834" uri="jboss-jaxrpc-api_1.1_spec.jar" projectName="jboss-jaxrpc-api_1.1_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1262874621" uri="jboss-saaj-api_1.3_spec.jar" projectName="jboss-saaj-api_1.3_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1552871846" uri="jboss-jaxws-api_2.2_spec.jar" projectName="jboss-jaxws-api_2.2_spec"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_748353731" uri="ojdbc6.jar" projectName="ojdbc6"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1916920085" uri="mysql-connector-java.jar" projectName="mysql-connector-java"/>
+  <mappings xmi:id="ModuleMapping_1465796536" projectName="sopeduc-web">
+    <module xmi:type="application:WebModule" href="META-INF/application.xml#WebModule_1465796536"/>
+  </mappings>
+  <mappings xmi:id="ModuleMapping_1857465815" projectName="sopeduc-wsserveur">
+    <module xmi:type="application:EjbModule" href="META-INF/application.xml#EjbModule_1857465815"/>
+  </mappings>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1126196301" uri="spring-webmvc.jar" projectName="spring-webmvc"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_60366249" uri="spring-context-support.jar" projectName="spring-context-support"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_963265559" uri="cglib.jar" projectName="cglib"/>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1872519027" uri="asm.jar" projectName="asm"/>
+</modulemap:EARProjectMap>
