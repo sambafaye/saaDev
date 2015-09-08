@@ -4,3 +4,13 @@ modules/sopeduc-wsserveur/target
 modules/sopeduc-wsclient/target
 modules/sopeduc-core/target
 modules/sopeduc-ear/target
+modules/sopeduc-ear/*.project
+modules/sopeduc-core/*.project
+modules/sopeduc-wsclient/*.project
+modules/sopeduc-web/*.project
+modules/sopeduc-wsserveur/*.project
+modules/sopeduc-ear/*.settings
+modules/sopeduc-core/*.settings
+modules/sopeduc-wsclient/*.settings
+modules/sopeduc-web/*.settings
+modules/sopeduc-wsserveur/*.settings

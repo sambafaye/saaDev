@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: spring-core-3.0.5.RELEASE.jar spring-asm-3.0.5.RELEASE.jar
-  commons-logging-1.1.1.jar spring-web-3.0.5.RELEASE.jar aopalliance-1
- .0.jar spring-beans-3.0.5.RELEASE.jar spring-context-3.0.5.RELEASE.ja
- r spring-aop-3.0.5.RELEASE.jar spring-expression-3.0.5.RELEASE.jar ja
- vaee-api-6.0-6.jar
-
