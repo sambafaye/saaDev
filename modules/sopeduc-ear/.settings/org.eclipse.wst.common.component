@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project-modules id="moduleCoreId" project-version="2.0">
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
   <wb-module deploy-name="sopeduc-ear">
     <wb-resource deploy-path="/" source-path="target/eclipseEar"/>
     <dependent-module archiveName="sopeduc-wsclient.jar" deploy-path="/" handle="module:/resource/sopeduc-wsclient/sopeduc-wsclient">
@@ -36,10 +35,6 @@
       <dependency-type>uses</dependency-type>
     </dependent-module>
     <dependent-module archiveName="sopeduc-resources.jar" deploy-path="/" handle="module:/resource/sopeduc-resources/sopeduc-resources">
-      <dependency-type>uses</dependency-type>
-    </dependent-module>
-    <dependent-module archiveName="sopeduc-services.jar" deploy-path="/" handle="module:/resource/sopeduc-services/sopeduc-services">
-      <dependent-object>EjbModule_669900732</dependent-object>
       <dependency-type>uses</dependency-type>
     </dependent-module>
     <dependent-module archiveName="sopeduc-core.jar" deploy-path="/" handle="module:/resource/sopeduc-core/sopeduc-core">
@@ -157,11 +152,7 @@
       <dependency-type>uses</dependency-type>
     </dependent-module>
     <dependent-module archiveName="sopeduc-web.war" deploy-path="/" handle="module:/resource/sopeduc-web/sopeduc-web">
-      <dependent-object>WebModule_1912325150</dependent-object>
-      <dependency-type>uses</dependency-type>
-    </dependent-module>
-    <dependent-module archiveName="sopeduc-wsserveur.jar" deploy-path="/" handle="module:/resource/sopeduc-wsserveur/sopeduc-wsserveur">
-      <dependent-object>EjbModule_1208535048</dependent-object>
+      <dependent-object>WebModule_1055890553</dependent-object>
       <dependency-type>uses</dependency-type>
     </dependent-module>
     <dependent-module archiveName="spring-webmvc-3.0.5.RELEASE.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/springframework/spring-webmvc/3.0.5.RELEASE/spring-webmvc-3.0.5.RELEASE.jar">
