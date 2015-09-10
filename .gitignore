@@ -9,12 +9,12 @@ modules/sopeduc-core/.project
 modules/sopeduc-wsclient/.project
 modules/sopeduc-web/.project
 modules/sopeduc-wsserveur/.project
-modules/sopeduc-ear/.settings
-modules/sopeduc-core/.settings
+modules/sopeduc-ear/.settings/
+modules/sopeduc-core/.settings/
 modules/sopeduc-wsclient/.settings
-modules/sopeduc-web/*.settings
-modules/sopeduc-wsserveur/.settings
-modules/sopeduc-services/.settings
+modules/sopeduc-web/.settings/
+modules/sopeduc-wsserveur/.settings/
+modules/sopeduc-services/.settings/
 modules/sopeduc-services/target
 modules/sopeduc-resources/target
 modules/sopeduc-ear/.settings/org.eclipse.wst.common.component
@@ -27,3 +27,8 @@ modules/sopeduc-wsserveur/.classpath
 modules/sopeduc-resources/.classpath
 modules/.DS_Store
 .DS_Store
+modules/sopeduc-wsserveur/.settings/
+modules/sopeduc-resources/.settings/
+*.project
+*.classpath
+*.settings
