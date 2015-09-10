@@ -1,0 +1,5 @@
+*.classpath
+*.class
+*.project
+*.settings
+.settings/org.eclipse.wst.common.component
