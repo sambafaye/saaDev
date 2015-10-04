@@ -31,6 +31,7 @@
 		<version.jboss-annotations-api_1.1_spec>1.0.1.Final</version.jboss-annotations-api_1.1_spec>
 		<version.jboss-ejb-api_3.1_spec>1.0.2.Final</version.jboss-ejb-api_3.1_spec>
 		<version.commons-lang3>3.4</version.commons-lang3>
+		<version.mysql-connector-java>5.1.36</version.mysql-connector-java>
 	</properties>
 
 	<distributionManagement></distributionManagement>
@@ -167,6 +168,13 @@
 				<artifactId>junit</artifactId>
 				<version>4.8.2</version>
 			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${version.mysql-connector-java}</version>
+			</dependency>
+
+			
 			<dependency>
 				<groupId>org.jboss.spec</groupId>
 				<artifactId>jboss-javaee-6.0</artifactId>

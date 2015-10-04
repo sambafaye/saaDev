@@ -11,13 +11,13 @@
         http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 	<!-- parametrage data source -->
 
-	<bean name="skmOrdresDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-		<property name="jndiName" value="java:jboss/jdbc/skmOrdresDataSource" />
+	<bean name="sopeducDS" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:jboss/jdbc/sopeducDS" />
 	</bean>
 
 	<bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<constructor-arg>
-			<ref bean="skmOrdresDataSource" />
+			<ref bean="sopeducDS" />
 		</constructor-arg>
 	</bean>
 	
