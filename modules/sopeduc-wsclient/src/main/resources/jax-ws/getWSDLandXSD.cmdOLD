@@ -1,0 +1,31 @@
+set rootURL=%1
+set serviceName=%2
+set webServiceURL=%rootURL%/%serviceName%
+
+del "%serviceName%.wsdl".wsdl
+curl -o "%serviceName%.wsdl" -v %webServiceURL%?WSDL
+if %errorlevel% neq 0 (
+	goto ERREUR
+)
+
+del "%serviceName%.xsd".xsd
+curl -o "%serviceName%.xsd" -v %webServiceURL%?xsd=1
+if %errorlevel% neq 0 (
+	goto ERREUR
+)
+
+set SEARCHTEXT=%webServiceURL%?xsd=1
+set REPLACETEXT=%serviceName%.xsd
+sed s,%SEARCHTEXT%,%REPLACETEXT%,g "%serviceName%.wsdl" > "%serviceName%.wsdl.tmp"
+if %errorlevel% neq 0 (
+	goto ERREUR
+)
+move "%serviceName%.wsdl.tmp" "%serviceName%.wsdl"
+if %errorlevel% neq 0 (
+	goto ERREUR
+)
+
+exit /B
+
+:ERREUR
+exit /B 1

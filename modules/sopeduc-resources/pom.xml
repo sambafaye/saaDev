@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>sopeduc-resources</artifactId>
+	<packaging>jar</packaging>
+	<name>${artifactId}</name>
+
+	<parent>
+		<groupId>com.yonima.sopeduc.serveur</groupId>
+		<artifactId>sopeduc-serveur</artifactId>
+		<version>SNAPSHOT</version>
+	</parent>
+	
+	<properties>
+	    <maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format>
+	    <version>${project.version}_${maven.build.timestamp}</version>		
+		<env>dev</env>
+	    <server>local</server>
+	    <instance>instance</instance>
+	</properties>
+
+	<profiles>
+		<!-- 
+			Profile utilisé pour internaliser les ressources spécifiques à l'environnement dans les livrables générés.
+			L'EAR/WAR contient les ressources applicatives et environnementales.
+		 -->
+		<profile>
+			<id>internalEnvResources</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<filters>
+					<filter>${basedir}/src/main/filters/${env}/${env}-${server}-${instance}.properties</filter>
+				</filters>
+				<resources>
+					<resource>
+						<directory>${basedir}/src/main/resources/env</directory>
+						<filtering>true</filtering>
+					</resource>
+					<resource>
+						<directory>${basedir}/src/main/resources/app</directory>
+						<filtering>true</filtering>
+					</resource>
+				</resources>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-resources-plugin</artifactId>
+						<version>2.6</version>
+						<executions>
+							<execution>
+								<phase>generate-resources</phase>
+								<goals>
+									<goal>resources</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>${basedir}/target/classes</outputDirectory>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-eclipse-plugin</artifactId>
+						<configuration>
+							<!--
+								Le buildCommand suivant permet la regeneration automatique des resources vers le dossier de travail d'Eclipse
+								pour le deploiement vers le serveur local ("eclipseEar") -->
+							<additionalBuildcommands>
+								<buildCommand>
+									<name>org.eclipse.ui.externaltools.ExternalToolBuilder</name>
+									<triggers>auto,full,incremental,</triggers>
+									<arguments>
+										<LaunchConfigHandle>&lt;project&gt;/src/main/scripts/resources-builder.launch</LaunchConfigHandle>
+									</arguments>
+								</buildCommand>
+							</additionalBuildcommands>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<!-- 
+			Profile utilisé pour externaliser les ressources spécifiques à l'environnement des livrables générés
+			L'EAR/WAR NE contient PAS les ressources environnementales => autant de livrables resources que de triplets (env, server, instance).
+			L'EAR/WAR est donc indépendant de l'environnement d'exécution.  
+		-->
+		<profile>
+			<id>externalEnvResources</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<filters>					
+					<filter>${basedir}/src/main/filters/${env}/${env}-${server}-${instance}.properties</filter>
+				</filters>
+				<resources>
+					<resource>
+						<directory>${basedir}/src/main/resources/app</directory>
+						<filtering>true</filtering>
+					</resource>
+				</resources>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-assembly-plugin</artifactId>
+						<!--
+							Utiliser spécifiquement cette version sinon il y
+							aura des fichiers avec noms étranges.
+						-->
+						<version>2.4</version>
+						<configuration>
+							<archive>
+									<manifest>
+										 <addExtensions/>
+									</manifest>	
+									
+									<manifestFile>src/main/assembly/MANIFEST.MF</manifestFile>
+									
+									<manifestEntries>
+											
+											<Manifest-Version>1.0</Manifest-Version>
+											<!--Extension-Name>gdt-env-resources-${instance}</Extension-Name-->
+											<!--Specification-Version>${env.spec.version}</Specification-Version-->
+											<!--Implementation-Version>${env.impl.version}</Implementation-Version-->
+									</manifestEntries>
+									
+							</archive>	
+						</configuration>
+						
+						
+						<executions>
+							<!--
+								Création du livrable de properties spécifiques à
+								l'environnement
+							-->
+							<execution>
+								<id>make-env-properties</id>
+								<phase>package</phase>
+								<goals>
+									<goal>single</goal>
+								</goals>
+							
+								
+								<configuration>
+									<finalName>${project.artifactId}-${project.version}-${server}-${instance}</finalName>
+									<outputDirectory>${basedir}/target/livrable/${env}/${server}/${instance}</outputDirectory>
+									<descriptors>
+										<descriptor>${basedir}/src/main/assembly/externalEnvResources.xml</descriptor>
+									</descriptors>															
+								</configuration>
+														
+							</execution>
+																	
+						</executions>
+									
+					</plugin>
+				</plugins>
+			</build>
+		</profile>	
+	</profiles>	
+
+</project>

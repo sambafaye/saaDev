@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wls:weblogic-web-app xmlns:wls="http://www.bea.com/ns/weblogic/weblogic-web-app" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://www.bea.com/ns/weblogic/weblogic-web-app http://www.bea.com/ns/weblogic/weblogic-web-app/1.0/weblogic-web-app.xsd">
+    <!--  
+        Chargement des classes dans le WEB-INF/classes de préférence 
+        pour éviter les problémes sur les instances mutualisées.
+        
+        Cas d'exemple : la version WLS 11g intègre un JAR Log4J.
+        Du coup, Log4J est chargé une seule fois par le classloader 
+        "weblogic". Les EARs partagent les mêmes classes Log4J 
+        et c'est le dernier qui impose sa configuration de logs.
+    -->
+    <wls:jsp-descriptor>
+        <wls:keepgenerated>true</wls:keepgenerated>
+        <wls:working-dir>D:\wls1035\workspaces\sopeduc\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\skmDomain\work\sopeduc-web</wls:working-dir>
+        <wls:debug>true</wls:debug>
+    </wls:jsp-descriptor>
+    <wls:context-root>sopeduc-web</wls:context-root>
+    <container-descriptor>
+        <prefer-web-inf-classes>true</prefer-web-inf-classes>
+    </container-descriptor>
+</wls:weblogic-web-app>
